@@ -8,23 +8,39 @@ const categories = ['Interior','Construction','Painting','Flooring','False Ceili
 
 export default function ClientHome({ navigation }) {
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{padding:16}}>
+    <ScrollView style={styles.container} contentContainerStyle={{ padding: 16 }}>
       <Text style={styles.title}>Find services near you</Text>
 
       <View style={styles.grid}>
-        {categories.map(cat => (
-          <CategoryCard key={cat} title={cat} onPress={()=> alert(`Open post for ${cat}`)} />
+        {categories.map((cat) => (
+          <View key={cat} style={styles.gridItem}>
+            <CategoryCard
+              title={cat}
+              onPress={() => navigation.navigate('PostTender', { category: cat })}
+            />
+          </View>
         ))}
       </View>
 
-      <View style={{marginTop: SPACING.l}} />
-      <PrimaryButton onPress={() => navigation.navigate('RoleSelect')}>Post a Tender</PrimaryButton>
+      <View style={{ marginTop: SPACING?.l ?? 24 }} />
+      <PrimaryButton onPress={() => navigation.navigate('RoleSelect')}>
+        Post a Tender
+      </PrimaryButton>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container:{flex:1, backgroundColor:'#FAFBFF'},
-  title:{fontSize:22,fontWeight:'700', marginBottom:12},
-  grid:{flexDirection:'row', flexWrap:'wrap', justifyContent:'space-between'}
+  container: { flex: 1, backgroundColor: '#FAFBFF' },
+  title: { fontSize: 22, fontWeight: '700', marginBottom: 12 },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginHorizontal: -8,
+  },
+  gridItem: {
+    width: '50%',
+    paddingHorizontal: 8,
+    marginBottom: 16,
+  },
 });
