@@ -9,6 +9,9 @@ import ClientHome from '../screens/ClientHome';
 import InteriorForm from '../screens/PostTender/InteriorForm';
 import Step1_ProjectBasics from '../screens/PostTender/Step1_ProjectBasics';
 import Step2_Kitchen from '../screens/PostTender/Step2_Kitchen';
+import Step3_Bedrooms from '../screens/PostTender/Step3_Bedrooms';
+import Step4_TVUnits from '../screens/PostTender/Step4_TVUnits';
+import Step5_GeneralFinal from '../screens/PostTender/Step5_GeneralFinal';
 
 
 // Diagnostic logging to terminal
@@ -31,6 +34,9 @@ export default function AppNavigator() {
       <Stack.Screen name="PostTender" component={InteriorForm} />
       <Stack.Screen name="Step1_ProjectBasics" component={Step1_ProjectBasics} />
       <Stack.Screen name="Step2_Kitchen" component={Step2_Kitchen} />
+      <Stack.Screen name="Step3_Bedrooms" component={Step3_Bedrooms} />
+      <Stack.Screen name="Step4_TVUnits" component={Step4_TVUnits} />
+      <Stack.Screen name="Step5_GeneralFinal" component={Step5_GeneralFinal} />
     </Stack.Navigator>
 
   );

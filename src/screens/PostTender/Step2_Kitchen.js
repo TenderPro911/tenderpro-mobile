@@ -12,6 +12,9 @@ import {
   Platform
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Step3_Bedrooms from './Step3_Bedrooms';
+
+
 
 /*
   Step 2: Kitchen (scroll page)
