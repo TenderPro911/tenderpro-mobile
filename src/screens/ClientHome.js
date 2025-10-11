@@ -1,12 +1,48 @@
+// src/screens/ClientHome.js
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import CategoryCard from '../components/CategoryCard';
 import PrimaryButton from '../components/PrimaryButton';
 import { SPACING } from '../styles/theme';
 
-const categories = ['Interior','Construction','Painting','Flooring','False Ceiling','Architects'];
+const categories = [
+  'Interior',
+  'Construction',
+  'Painting',
+  'Flooring',
+  'False Ceiling',
+  'Architects',
+];
 
 export default function ClientHome({ navigation }) {
+  const handleCategoryPress = (cat) => {
+    // Dedicated flows
+    if (cat === 'Construction') {
+      navigation.navigate('ConstructionPage');
+      return;
+    }
+    if (cat === 'Painting') {
+      navigation.navigate('PaintingPage');
+      return;
+    }
+    if (cat === 'Flooring') {
+      navigation.navigate('FlooringPage');
+      return;
+    }
+    if (cat === 'False Ceiling'){
+      navigation.navigate('FalseCeilingPage');
+      return;
+    }
+    if (cat === 'Architects'){
+      navigation.navigate('ArchitectPage');
+      return;
+    }
+
+
+    // default: reuse existing PostTender flow with category param
+    navigation.navigate('PostTender', { category: cat });
+  };
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ padding: 16 }}>
       <Text style={styles.title}>Find services near you</Text>
@@ -14,10 +50,7 @@ export default function ClientHome({ navigation }) {
       <View style={styles.grid}>
         {categories.map((cat) => (
           <View key={cat} style={styles.gridItem}>
-            <CategoryCard
-              title={cat}
-              onPress={() => navigation.navigate('PostTender', { category: cat })}
-            />
+            <CategoryCard title={cat} onPress={() => handleCategoryPress(cat)} />
           </View>
         ))}
       </View>

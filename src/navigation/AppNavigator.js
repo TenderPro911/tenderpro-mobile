@@ -12,6 +12,12 @@ import Step2_Kitchen from '../screens/PostTender/Step2_Kitchen';
 import Step3_Bedrooms from '../screens/PostTender/Step3_Bedrooms';
 import Step4_TVUnits from '../screens/PostTender/Step4_TVUnits';
 import Step5_GeneralFinal from '../screens/PostTender/Step5_GeneralFinal';
+import ConstructionPage from "../pages/ConstructionPage";
+import InteriorsPage from "../screens/PostTender/InteriorForm";
+import PaintingPage from "../pages/PaintingPage";
+import FlooringPage from "../pages/FlooringPage";
+import FalseCeilingPage from "../pages/FalseCeilingPage";
+import ArchitectPage from "../pages/ArchitectPage";
 
 
 // Diagnostic logging to terminal
@@ -37,6 +43,11 @@ export default function AppNavigator() {
       <Stack.Screen name="Step3_Bedrooms" component={Step3_Bedrooms} />
       <Stack.Screen name="Step4_TVUnits" component={Step4_TVUnits} />
       <Stack.Screen name="Step5_GeneralFinal" component={Step5_GeneralFinal} />
+      <Stack.Screen name="ConstructionPage" component={ConstructionPage}/>
+      <Stack.Screen name="PaintingPage" component={PaintingPage} />
+      <Stack.Screen name="FlooringPage" component={FlooringPage} />
+      <Stack.Screen name="FalseCeilingPage" component={FalseCeilingPage} />
+      <Stack.Screen name="ArchitectPage" component={ArchitectPage} />
     </Stack.Navigator>
 
   );
